@@ -1,0 +1,31 @@
+<h3 >Employee</h3>
+<table border="2" width="500">
+  <tr>
+    <th>Employee Id</th>
+    <th>Employee Name</th>
+    <th>Salary</th>
+    <th>Job</th>
+    <th>Department no</th>
+  </tr>
+
+  <tr  *ngFor="let item of emps">
+    <td>{{item.eid}}</td>
+    <td>{{item.en}}</td>
+    <td>{{item.sal}}</td>
+    <td>{{item.job}}</td>
+    <td>{{item.dept}}</td>
+    <td><input type="submit" value="Edit" (click)="f3(item.eid)" /></td>
+    <td><input type="submit" value="Remove" (click)="f4(item.eid)" /></td>
+  </tr>
+
+</table>
+<br/>
+<input type="number" id="yas" placeholder="Employee Id" [(ngModel)]="eid"/>
+<input type="text" placeholder="Employee Name" [(ngModel)]="en"/>
+<input type="text" placeholder="salary" [(ngModel)]="sal"/>
+<input type="text" placeholder="Job" [(ngModel)]="job"/>
+<input type="number" placeholder="Department no" [(ngModel)]="dept"/> 
+<br/>  <br/>       
+<input type="submit" value="Add Employee" (click)="f2()" />
+<input type="submit" value="Update Employee" (click)="f5()" />
+<hr/>

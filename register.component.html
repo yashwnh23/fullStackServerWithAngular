@@ -1,0 +1,32 @@
+<p>
+  register works!
+</p>
+<form #f1="ngForm">
+   Full Name:  
+    <input type="text" [(ngModel)] ="name" #t2="ngModel" name="name" required="true"/>
+    <span class="c1"  *ngIf="t2.invalid && t2.dirty"> Name is required</span>	  
+  <br/><br/>   
+  Email : 
+<input type="email" [(ngModel)]="email"  name="email"
+    #t3="ngModel" required="true" email="true"/>
+    <span class="c1"  *ngIf="t3.invalid && t3.dirty"> 
+      Email is required
+      </span>
+      <br/><br/>  
+  Password :     	
+  <input  type="password" [(ngModel)]="pass" name="pass"
+    #t4="ngModel" required="true" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"/> 
+    <span class="c1"  *ngIf="t4.invalid && t4.dirty"> 
+      password Should Contain atleast one digit and one upper and lowercase.
+      </span>	
+      <br/><br/>
+  Retype Password        
+    <input  type="password" [(ngModel)]="cpass" name="cpass"
+    #t5="ngModel" required="true" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" (input)="f3()"/>    
+    <span class="c1"  *ngIf="t5.invalid && t5.dirty"> 
+      Name is required
+      </span>	
+      <br/><br/>
+      <input type="button" (click)="f2()" value="Register"  [disabled]="f1.invalid"  /> 
+  </form>
+  <span>{{details}}</span>

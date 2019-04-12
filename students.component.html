@@ -1,0 +1,38 @@
+<p>
+  students works!
+</p>
+<h3>Student details</h3>
+<table border="3">
+  <tr>
+    <th>Roll No</th>
+    <th>Student Name</th>
+    <th>Percentage</th>
+    <th>Grade</th>
+  </tr>
+  <tr *ngFor="let j of stu">
+    <td>{{j.sno}} </td>
+    <td>{{j.sname|titlecase}} </td>
+    <td>{{j.per|percentage}} </td>
+    <td>{{j.grade|grade|uppercase}} </td>
+    <td><input type="button" value="edit" (click)="f1(j.sno)"/></td>
+    <td><input type="button" value="remove" (click)="f2(j.sno)"/></td>
+  </tr>
+</table>
+<br/>
+<hr/>
+<input type="number" [(ngModel)]="sno"/>
+<input type="text" [(ngModel)]="sname"/>
+<input type="number" [(ngModel)]="per"/>
+<select [(ngModel)]="grade">
+  <option>A</option>
+  <option>A+</option>
+  <option>B</option>
+  <option>B+</option>
+  <option>C</option>
+</select>
+
+<br/>
+<br/>
+<td><input type="button" value="Add" (click)="f3()"/></td>
+<td><input type="button" value="Update" (click)="f4()"/></td>
+    

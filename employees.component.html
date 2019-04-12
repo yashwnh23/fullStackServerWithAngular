@@ -1,0 +1,50 @@
+<img src="/assets/fb.png" width="50" height="50"/>
+<br/>
+
+<h3>Developing Web Applicatoins using Angular</h3>
+<hr/>
+
+<div style="border: 2px solid Blue; padding: 5px; width: 250px;">
+  Employee Number :  {{empno}}  <br/>
+  Employee Name :  {{ename}}  <br/>
+  Employee Deptno :  {{deptno}}  <br/>
+  Employee Deptno :  {{yash}}  <br/>
+</div>
+<hr/>
+
+<div style="border: 2px solid Red; padding: 5px; width: 250px;">
+
+    <ul>
+      <li  *ngFor="let item of cities">
+        {{ item }}
+      </li>
+    </ul>
+
+</div>
+
+<hr/>
+
+<div style="border: 2px solid Green; padding: 5px; width: 250px;">
+  Department Number :  {{deptObj.deptno}}  <br/>
+  Department Name :  {{deptObj.dname}}  <br/>
+  Department Location :  {{deptObj.loc}}  <br/>
+</div>
+
+<hr/>
+
+<div style="border: 2px solid Blue; padding: 5px; width: 250px;">
+    <table border="2" width="250">
+      <tr>
+        <th>Deptno</th>
+        <th>Dname</th>
+        <th>Location</th>
+      </tr>
+
+      <tr  *ngFor="let item of depts">
+        <td>{{ item.deptno }}</td>
+        <td>{{ item.dname }}</td>
+        <td>{{ item.loc }}</td>
+      </tr>
+
+    </table>
+</div>

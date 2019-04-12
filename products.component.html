@@ -1,0 +1,29 @@
+<table border="2" width="500">
+  <tr>
+    <th>Product Name</th>
+    <th>Brand</th>
+    <th>Price</th>
+    <th>Category</th>
+  </tr>
+
+  <tr  *ngFor="let item of prods">
+    <td>{{item.pname}}</td>
+    <td>{{item.brand}}</td>
+    <td>{{item.price}}</td>
+    <td>{{item.categories}}</td>
+    <td><input type="submit" value="Edit" (click)="f7(item.pname)" /></td>
+    <td><input type="submit" value="Remove" (click)="f8(item.pname)" /></td>
+    <td><a [routerLink]="['/details',item.pname]">Get Details</a> </td>
+  </tr>
+
+</table>
+<input type="submit" value="Get Products" (click)="f6()" />
+<input type="submit" value="Update Products" (click)="f9()" />
+<input type="submit" value="Add Products" (click)="f10()" />
+<br/><br/>
+<input type="text" placeholder="Product Name" [(ngModel)]="pn"/>
+<input type="text" placeholder="Brand" [(ngModel)]="br"/>
+<input type="text" placeholder="Category" [(ngModel)]="cat"/>
+<input type="number" placeholder="price" [(ngModel)]="pri"/> 
+
+<hr/>

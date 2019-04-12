@@ -1,0 +1,53 @@
+<style>
+	.c1 {   color : Red;  }
+</style>
+
+<h3> Angular Form Validations using  Model Drieven  </h3>
+<hr/>
+
+ 
+
+<form [formGroup]="customerForm">
+    Full Name  : 
+        <input  formControlName="fname" [(ngModel)]="fname"/>
+        <span class="c1" *ngIf="customerForm.controls.fname.invalid && customerForm.controls.fname.dirty">
+          Full Name is required</span>
+        <br/><br/>
+        Mobile number :
+        <input type="number"  formControlName="mobile" [(ngModel)]="mob" />
+        
+        <span  class="c1"  *ngIf="customerForm.controls.mobile.invalid && customerForm.controls.mobile.dirty">
+          Ten digit mobile number required
+        </span>		
+      <br><br>
+    
+       E-mail  : 
+       <input   formControlName="email" [(ngModel)]="email" />
+        
+        <span  class="c1"  *ngIf="customerForm.controls.email.invalid && customerForm.controls.email.dirty">
+          Enter proper e-mail id
+        </span>		
+      <br><br>
+    
+      Password : 
+      <input   formControlName="pass" [(ngModel)]="pass" />
+    
+          <span  class="c1"  *ngIf="customerForm.controls.pass.invalid && customerForm.controls.pass.dirty">
+          Password should contain atleast one uppercase , lowercase and number 
+        </span>		
+      <br><br>
+
+      Retype Password : 
+      <input   formControlName="cpass" (input)="f2()" [(ngModel)]="cpass" />
+    
+          <span  class="c1"  *ngIf="customerForm.controls.cpass.invalid && customerForm.controls.cpass.dirty">
+           {{details}}<br/> Password should contain atleast one uppercase , lowercase and number 
+        </span>		
+      <br><br>
+ 
+    <input type="button"  [disabled]="f3(customerForm.invalid) "   (click)="f1()"  value="Register" />  
+</form>
+
+
+
+
